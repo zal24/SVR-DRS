@@ -17,7 +17,8 @@ class Disease_definition extends CI_Controller{
     function index()
     {
         $data['disease_definition'] = $this->Disease_definition_model->get_all_disease_definition();
-
+		$data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
         $data['_view'] = 'disease_definition/index';
         $this->load->view('layouts/main',$data);
     }
@@ -28,7 +29,8 @@ class Disease_definition extends CI_Controller{
     function add()
     {   
         $this->load->library('form_validation');
-
+		$data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
 		$this->form_validation->set_rules('disease_name','Disease Name','required|max_length[30]');
 		$this->form_validation->set_rules('disease_description','Disease Description','required');
 		$this->form_validation->set_rules('disease_category_code','Disease Category Code','required|integer');
@@ -55,7 +57,9 @@ class Disease_definition extends CI_Controller{
      * Editing a disease_definition
      */
     function edit($disease_code)
-    {   
+    {
+		$data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
         // check if the disease_definition exists before trying to edit it
         $data['disease_definition'] = $this->Disease_definition_model->get_disease_definition($disease_code);
         
@@ -93,6 +97,8 @@ class Disease_definition extends CI_Controller{
      */
     function remove($disease_code)
     {
+		$data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
         $disease_definition = $this->Disease_definition_model->get_disease_definition($disease_code);
 
         // check if the disease_definition exists before trying to delete it

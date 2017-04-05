@@ -17,7 +17,8 @@ class Country extends CI_Controller{
     function index()
     {
         $data['countries'] = $this->Country_model->get_all_countries();
-
+		$data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
         $data['_view'] = 'country/index';
         $this->load->view('layouts/main',$data);
     }
@@ -28,7 +29,8 @@ class Country extends CI_Controller{
     function add()
     {   
         $this->load->library('form_validation');
-
+		$data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
 		$this->form_validation->set_rules('country_name','Country Name','required|max_length[30]');
 		$this->form_validation->set_rules('country_abbreviation','Country Abbreviation','required|max_length[5]');
 		
@@ -56,7 +58,8 @@ class Country extends CI_Controller{
     {   
         // check if the country exists before trying to edit it
         $data['country'] = $this->Country_model->get_country($country_code);
-        
+        $data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
         if(isset($data['country']['country_code']))
         {
             $this->load->library('form_validation');
@@ -90,7 +93,8 @@ class Country extends CI_Controller{
     function remove($country_code)
     {
         $country = $this->Country_model->get_country($country_code);
-
+		$data['authLevel'] = 1;
+        $this->load->view('templates/loginAuth', $data);
         // check if the country exists before trying to delete it
         if(isset($country['country_code']))
         {
