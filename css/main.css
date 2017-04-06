@@ -76,7 +76,11 @@
     width: auto;
     }
     
-    .table_wrap a{
+    .main_wrap table {
+    width: 90%;
+    }
+    
+    .main_wrap a{
     font: bold 11px Arial;
     text-decoration: none;
     background-color: #EEEEEE;

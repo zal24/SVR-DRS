@@ -1,10 +1,13 @@
   <center>
-<h2><?php echo $title; ?></h2>
-
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('user/create'); ?>
 <table>
+  <tr>
+    <th colspan=2>  
+      <center><?php echo $title; ?></center>
+    </th>
+  </tr>
   <tr>
     <td>
       <label for="username">Username:</label>
@@ -26,8 +29,11 @@
       <input type="password" name="password" value="">
     </td>
   </tr>
+  <tr>
+    <td colspan=2>  
+      <center><input type="submit" name="submit" value="Create User" /></center>
+    </td>
+  </tr>
 </table>
-<input type="submit" name="submit" value="Create User" />
-
 </form>
 </center>
