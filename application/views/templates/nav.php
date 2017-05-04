@@ -2,14 +2,14 @@
 <ul class="navigation">
   <li><a href="<?php echo site_url('main'); ?>" title="Home">Home</a></li>
   <?PHP if(isset($_SESSION['Username'])){ ?>
-   <li><a href="<?php echo site_url('user/view'); ?>">Account</a>
+   <li><a href="#" title="Account">Account</a>
     <ul>
       <li><a href="<?php echo site_url('user/view'); ?>">Profile</a></li>
       <li><a href="<?php echo site_url('user/logout'); ?>">Logout</a></li>
     </ul>
   </li>
   <?PHP if($_SESSION['PermissionSet']>=1){ ?>
-  <li><a href="#" title="Veiw">Veiw</a>
+  <li><a href="#" title="View">View</a>
     <ul>
       <li><a href="<?php echo site_url('country'); ?>">Countries</a></li>
       <li><a href="<?php echo site_url('disease_definition'); ?>">Disease Definitions</a></li>
@@ -18,7 +18,7 @@
       <li><a href="<?php echo site_url('state'); ?>">State</a></li>
       </ul>
   </li>
-    <li><a href="#" title="Veiw">Add</a>
+    <li><a href="#" title="Add">Add</a>
     <ul>
       <li><a href="<?php echo site_url('country/add'); ?>">Countries</a></li>
       <li><a href="<?php echo site_url('disease_definition/add'); ?>">Disease Definitions</a></li>
@@ -31,6 +31,7 @@
     <li><a href="#">People</a>
       <ul>
         <li><a href="<?php echo site_url('visiting_patron'); ?>">Veiw Visiting Patrons</a></li>
+        <li><a href="<?php echo site_url('visiting_patron/add'); ?>">Add Visiting Patron</a></li>
         <li><a href="<?php echo site_url('user/create'); ?>">Create User</a></li>
       </ul>
     </li>

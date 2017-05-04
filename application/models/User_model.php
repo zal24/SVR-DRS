@@ -43,7 +43,7 @@ class User_model extends CI_Model {
 
     public function set_profile_pic($pic=NULL)
     {
-      $this->db->set('Profile_Pic',"'".$pic."'" , FALSE);
+      $this->db->set('Image_Path',"'".$pic."'" , FALSE);
       $this->db->where('User_ID', $_SESSION['User_ID']);
       $this->db->update('users');
     }

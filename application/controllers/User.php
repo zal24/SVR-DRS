@@ -16,6 +16,8 @@ class User extends CI_Controller {
         $data['title'] = 'User archive';
 
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/nav');
+        $this->load->view('templates/prettyShtuff');
         $this->load->view('user/index', $data);
         $this->load->view('templates/footer');
     }
@@ -25,7 +27,7 @@ class User extends CI_Controller {
     {
         $data['authLevel'] = 0;
         $this->load->view('templates/loginAuth', $data);
-        
+
         $data['user_item'] = $this->user_model->get_user($_SESSION['User_ID']);
 
 
@@ -37,6 +39,7 @@ class User extends CI_Controller {
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/nav');
+        $this->load->view('templates/prettyShtuff');
         $this->load->view('user/view', $data);
         $this->load->view('templates/footer');
     }
@@ -55,6 +58,7 @@ class User extends CI_Controller {
       {
           $this->load->view('templates/header');
           $this->load->view('templates/nav');
+          $this->load->view('templates/prettyShtuff');
           $this->load->view('user/login');
           $this->load->view('templates/footer');
 
@@ -71,6 +75,7 @@ class User extends CI_Controller {
           {
             $this->load->view('templates/header');
             $this->load->view('templates/nav');
+            $this->load->view('templates/prettyShtuff');
             $this->load->view('user/login');
             $this->load->view('templates/footer');
           }
@@ -99,6 +104,7 @@ class User extends CI_Controller {
         {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/nav');
+            $this->load->view('templates/prettyShtuff');
             $this->load->view('user/create');
             $this->load->view('templates/footer');
 

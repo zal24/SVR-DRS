@@ -11,6 +11,7 @@
 		if(isset($_view) && $_view){
 		$this->load->view('templates/header');
 		$this->load->view('templates/nav');
+		$this->load->view('templates/prettyShtuff');
 		echo '<div class="main_wrap">';
 	    $this->load->view($_view);
 		echo '</div>';
